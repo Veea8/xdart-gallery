@@ -1,0 +1,107 @@
+/* ── Back link ── */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text2);
+  margin-bottom: 48px;
+  transition: color 0.2s;
+}
+.back-link:hover { color: var(--accent); }
+.back-link svg { flex-shrink: 0; }
+
+/* ── Detail layout ── */
+.artwork-detail {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 64px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .artwork-detail { grid-template-columns: 1fr; gap: 36px; }
+}
+
+/* ── Image panel ── */
+.main-image-wrap {
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.main-image-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+.main-image-wrap img.fading { opacity: 0; }
+
+.thumb-strip {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+.thumb-strip.hidden { display: none; }
+
+.thumb {
+  width: 72px;
+  height: 56px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.15s, opacity 0.15s;
+  flex-shrink: 0;
+}
+.thumb.active  { border-color: var(--text); }
+.thumb:not(.active) { opacity: 0.55; }
+.thumb:hover:not(.active) { opacity: 0.8; }
+
+/* ── Details panel ── */
+.details-panel { padding-top: 4px; }
+
+.artwork-collection {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.artwork-year {
+  margin-top: 10px;
+  font-size: 0.875rem;
+  color: var(--text2);
+  letter-spacing: 0.04em;
+}
+
+.detail-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 28px 0;
+}
+
+.detail-row {
+  margin-bottom: 20px;
+}
+.detail-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text2);
+  display: block;
+  margin-bottom: 4px;
+}
+.detail-value {
+  font-size: 0.9375rem;
+  font-weight: 400;
+}
+
+/* ── Error state ── */
+.error-msg {
+  padding: 80px 0;
+  color: var(--text2);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+}

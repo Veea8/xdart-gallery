@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — xdart gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    .about-content { max-width: 680px; }
+    .about-content h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 40px;
+    }
+    .about-photo {
+      width: 100%;
+      max-width: 340px;
+      height: auto;
+      margin-bottom: 40px;
+      border: 1px solid var(--border);
+    }
+    .about-content p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text2);
+      margin-bottom: 20px;
+    }
+    .about-content p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-name">xdart <em>gallery</em></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html">Gallery</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-content">
+      <div class="about-content">
+        <h1>About</h1>
+
+        <!-- Optional artist photo: uncomment and update the src -->
+        <!-- <img class="about-photo" src="images/artist.jpg" alt="Artist photo" /> -->
+
+        <p>
+          Write your artist statement or biography here. Tell visitors who you are,
+          where you work, and what drives your practice.
+        </p>
+        <p>
+          Edit this text directly in <code>about.html</code> — no login or CMS required.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> xdart gallery</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('nav-toggle').addEventListener('click', function () {
+      this.classList.toggle('open');
+      document.getElementById('site-nav').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

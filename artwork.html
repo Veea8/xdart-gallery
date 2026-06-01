@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artwork — xdart gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/artwork.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-name">xdart <em>gallery</em></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-content">
+
+      <a href="index.html" class="back-link" id="back-link">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to gallery
+      </a>
+
+      <div class="error-msg" id="error-msg" style="display:none">
+        Artwork not found.
+      </div>
+
+      <div id="detail-content" style="display:none">
+        <div class="artwork-detail">
+
+          <!-- Left: Image viewer -->
+          <div class="image-panel">
+            <div class="main-image-wrap">
+              <img id="main-img" src="" alt="" />
+            </div>
+            <div class="thumb-strip" id="thumb-strip">
+              <img class="thumb" id="thumb-artwork" src="" alt="" title="Artwork photo" />
+              <img class="thumb" id="thumb-room" src="" alt="" title="Room view" />
+            </div>
+          </div>
+
+          <!-- Right: Details -->
+          <div class="details-panel">
+            <h1 class="artwork-collection" id="artwork-collection"></h1>
+            <p class="artwork-year" id="artwork-year"></p>
+
+            <hr class="detail-divider" />
+
+            <div class="detail-row">
+              <span class="detail-label">Medium</span>
+              <span class="detail-value" id="detail-medium"></span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Dimensions</span>
+              <span class="detail-value" id="detail-dimensions"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> xdart gallery</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('nav-toggle').addEventListener('click', function () {
+      this.classList.toggle('open');
+      document.getElementById('site-nav').classList.toggle('open');
+    });
+  </script>
+  <script src="js/artwork.js"></script>
+</body>
+</html>
