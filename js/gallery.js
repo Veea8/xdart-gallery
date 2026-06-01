@@ -5,7 +5,6 @@
   let activeCollection = 'All';
   let activeYear = 'All';
   let selCollection, selYear;
-  let resizeTimer;
 
   fetch('artworks.json')
     .then(r => r.json())
@@ -14,7 +13,7 @@
       init();
     })
     .catch(() => {
-      document.querySelector('.masonry').innerHTML =
+      document.getElementById('masonry').innerHTML =
         '<p style="color:var(--text2);padding:24px">Could not load artworks.</p>';
     });
 
@@ -22,10 +21,6 @@
     readHash();
     buildFilters();
     renderGrid();
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(layoutMasonry, 120);
-    });
     window.addEventListener('hashchange', () => {
       readHash();
       updateSelects();
@@ -84,7 +79,6 @@
     const sel = document.createElement('select');
     sel.className = 'filter-select';
     sel.id = id;
-
     values.forEach(v => {
       const opt = document.createElement('option');
       opt.value = v;
@@ -107,94 +101,98 @@
 
   // ── Grid render ───────────────────────────────────────────────
   function renderGrid() {
-    const grid = document.getElementById('masonry');
-    grid.innerHTML = '';
+    const masonry = document.getElementById('masonry');
+    masonry.innerHTML = '';
 
+    // Collect consecutive artworks into groups by gruppe value
+    const groups = [];
     allArtworks.forEach(artwork => {
-      const item = document.createElement('div');
-      item.className = 'masonry-item';
-      item.dataset.collection = artwork.collection;
-      item.dataset.year = String(artwork.year);
+      const last = groups[groups.length - 1];
+      if (last && last.gruppe === artwork.gruppe) {
+        last.items.push(artwork);
+      } else {
+        groups.push({ gruppe: artwork.gruppe, items: [artwork] });
+      }
+    });
 
-      // Store width/height aspect ratio for mathematical layout
-      const d = artwork.dimensions;
-      const ar = d.round ? 1 : (d.width && d.height ? d.width / d.height : 1);
-      item.dataset.ar = ar;
+    groups.forEach((group, gi) => {
+      const groupEl = document.createElement('div');
+      groupEl.className = 'artwork-group';
+      groupEl.dataset.gruppe = group.gruppe;
 
-      const img = document.createElement('img');
-      img.src = artwork.image;
-      img.alt = artwork.collection + ', ' + artwork.year;
-      img.loading = 'lazy';
-      // Aspect ratio reserves correct space before images load
-      img.style.aspectRatio = d.round ? '1' : (d.width + ' / ' + d.height);
-
-      const overlay = document.createElement('div');
-      overlay.className = 'masonry-overlay';
-      overlay.innerHTML =
-        '<span class="ov-collection">' + artwork.collection + '</span>' +
-        '<span class="ov-year">' + artwork.year + '</span>';
-
-      item.appendChild(img);
-      item.appendChild(overlay);
-      item.addEventListener('click', () => {
-        location.href = 'artwork.html?id=' + encodeURIComponent(artwork.id);
+      group.items.forEach(artwork => {
+        groupEl.appendChild(createItem(artwork));
       });
 
-      grid.appendChild(item);
+      masonry.appendChild(groupEl);
+
+      // Separator between groups (not after the last)
+      if (gi < groups.length - 1) {
+        const sep = document.createElement('div');
+        sep.className = 'group-sep';
+        masonry.appendChild(sep);
+      }
     });
 
     filterGrid();
   }
 
+  function createItem(artwork) {
+    const item = document.createElement('div');
+    item.className = 'masonry-item';
+    item.dataset.collection = artwork.collection;
+    item.dataset.year = String(artwork.year);
+
+    const img = document.createElement('img');
+    img.src = artwork.image;
+    img.alt = artwork.collection + ', ' + artwork.year;
+    img.loading = 'lazy';
+
+    const overlay = document.createElement('div');
+    overlay.className = 'masonry-overlay';
+    overlay.innerHTML =
+      '<span class="ov-collection">' + artwork.collection + '</span>' +
+      '<span class="ov-year">' + artwork.year + '</span>';
+
+    item.appendChild(img);
+    item.appendChild(overlay);
+    item.addEventListener('click', () => {
+      location.href = 'artwork.html?id=' + encodeURIComponent(artwork.id);
+    });
+
+    return item;
+  }
+
+  // ── Filter ────────────────────────────────────────────────────
   function filterGrid() {
-    document.querySelectorAll('.masonry-item').forEach(item => {
-      const collOk = activeCollection === 'All' || item.dataset.collection === activeCollection;
-      const yearOk = activeYear === 'All' || item.dataset.year === activeYear;
-      item.classList.toggle('hidden', !(collOk && yearOk));
-    });
-    layoutMasonry();
-  }
-
-  // ── Masonry layout — left-to-right fill, tight packing ────────
-  function getNumCols() {
-    const w = window.innerWidth;
-    if (w >= 1200) return 4;
-    if (w >= 768)  return 3;
-    if (w >= 480)  return 2;
-    return 1;
-  }
-
-  function layoutMasonry() {
-    const grid = document.getElementById('masonry');
-    const items = Array.from(grid.querySelectorAll('.masonry-item:not(.hidden)'));
-
-    if (!items.length) { grid.style.height = '0'; return; }
-
-    const numCols = getNumCols();
-    const gap     = window.innerWidth < 480 ? 10 : 16;
-    const cs      = getComputedStyle(grid);
-    const padL    = parseFloat(cs.paddingLeft);
-    const padB    = parseFloat(cs.paddingBottom);
-    const avail   = grid.clientWidth - padL - parseFloat(cs.paddingRight);
-    const colW    = (avail - gap * (numCols - 1)) / numCols;
-
-    const colH = new Array(numCols).fill(0);
-
-    items.forEach((item, i) => {
-      const col  = i % numCols;
-      const ar   = parseFloat(item.dataset.ar) || 1;
-      // height = width / aspect-ratio + 2px for top+bottom border
-      const itemH = colW / ar + 2;
-
-      item.style.position = 'absolute';
-      item.style.width    = colW + 'px';
-      item.style.left     = (padL + col * (colW + gap)) + 'px';
-      item.style.top      = colH[col] + 'px';
-
-      colH[col] += itemH + gap;
+    // Filter individual items and track group visibility
+    document.querySelectorAll('.artwork-group').forEach(group => {
+      let anyVisible = false;
+      group.querySelectorAll('.masonry-item').forEach(item => {
+        const collOk = activeCollection === 'All' || item.dataset.collection === activeCollection;
+        const yearOk = activeYear === 'All' || item.dataset.year === activeYear;
+        const show = collOk && yearOk;
+        item.classList.toggle('hidden', !show);
+        if (show) anyVisible = true;
+      });
+      group.classList.toggle('hidden', !anyVisible);
     });
 
-    grid.style.height = (Math.max(...colH) - gap + padB) + 'px';
+    // Hide all separators, then show one between each pair of consecutive visible groups
+    document.querySelectorAll('.group-sep').forEach(sep => sep.classList.add('hidden'));
+
+    const visibleGroups = Array.from(document.querySelectorAll('.artwork-group:not(.hidden)'));
+    for (let i = 0; i < visibleGroups.length - 1; i++) {
+      // Walk forward from visibleGroups[i] until we find a separator before visibleGroups[i+1]
+      let el = visibleGroups[i].nextElementSibling;
+      while (el && el !== visibleGroups[i + 1]) {
+        if (el.classList.contains('group-sep')) {
+          el.classList.remove('hidden');
+          break;
+        }
+        el = el.nextElementSibling;
+      }
+    }
   }
 
 })();
