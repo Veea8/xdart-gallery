@@ -54,10 +54,8 @@
     <div class="page-content">
       <div class="about-content">
         <h1>About</h1>
-
         <!-- Optional artist photo: uncomment and update the src -->
         <!-- <img class="about-photo" src="images/artist.jpg" alt="Artist photo" /> -->
-
         <p>
           Write your artist statement or biography here. Tell visitors who you are,
           where you work, and what drives your practice.
@@ -69,16 +67,16 @@
     </div>
   </main>
 
+  <button class="scroll-top" id="scroll-top" aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path d="M3 10L8 5L13 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
   <footer class="site-footer">
     <p>&copy; <span id="year"></span> xdart gallery</p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('nav-toggle').addEventListener('click', function () {
-      this.classList.toggle('open');
-      document.getElementById('site-nav').classList.toggle('open');
-    });
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>

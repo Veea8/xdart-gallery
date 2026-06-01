@@ -122,6 +122,28 @@ main { flex: 1; }
   letter-spacing: 0.04em;
 }
 
+/* ── Back to top ── */
+.scroll-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  background: var(--text);
+  color: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, background 0.2s;
+  z-index: 50;
+  border: none;
+}
+.scroll-top.visible { opacity: 1; pointer-events: all; }
+.scroll-top:hover   { background: var(--accent); }
+
 /* ── Page wrapper (About, Contact) ── */
 .page-content {
   max-width: var(--max-width);

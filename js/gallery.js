@@ -144,7 +144,7 @@
     item.dataset.year = String(artwork.year);
 
     const img = document.createElement('img');
-    img.src = artwork.image;
+    img.src = artwork.image.replace('images/artworks/', 'images/thumbs/');
     img.alt = artwork.collection + ', ' + artwork.year;
     img.loading = 'lazy';
 
