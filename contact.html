@@ -25,6 +25,9 @@
       margin-bottom: 36px;
     }
     .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       font-family: 'Jost', sans-serif;
       font-size: 1rem;
       font-weight: 400;
@@ -60,6 +63,7 @@
           For inquiries about artworks, exhibitions, or commissions, feel free to reach out.
         </p>
         <a class="contact-email" href="mailto:info@xdart.ch">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
           info@xdart.ch
         </a>
       </div>
@@ -75,7 +79,12 @@
   <footer class="site-footer">
     <p>&copy; <span id="year"></span> xdart gallery</p>
     <div class="footer-social">
-      <span class="footer-follow">Follow on</span>
+      <a href="https://xdart.ch/" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        xdart.ch
+      </a>
+      <span class="footer-divider">·</span>
+      <span class="footer-follow">Follow me on</span>
       <a href="https://www.instagram.com/xdart.ch?utm_source=qr" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
         Instagram

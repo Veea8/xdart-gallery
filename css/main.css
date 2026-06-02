@@ -133,6 +133,11 @@ main { flex: 1; }
   color: var(--text2);
   letter-spacing: 0.04em;
 }
+.footer-divider {
+  color: var(--border);
+  font-size: 0.75rem;
+  user-select: none;
+}
 .footer-social a {
   display: flex;
   align-items: center;
