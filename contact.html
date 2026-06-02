@@ -24,8 +24,7 @@
       color: var(--text2);
       margin-bottom: 36px;
     }
-    .contact-email,
-    .contact-social {
+    .contact-email {
       font-family: 'Jost', sans-serif;
       font-size: 1rem;
       font-weight: 400;
@@ -33,24 +32,8 @@
       border-bottom: 1px solid var(--border);
       padding-bottom: 3px;
       transition: border-color 0.2s, color 0.2s;
-      display: inline-block;
     }
-    .contact-email:hover,
-    .contact-social:hover { color: var(--accent); border-color: var(--accent); }
-    .social-links {
-      margin-top: 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .social-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text2);
-      display: block;
-      margin-bottom: 6px;
-    }
+    .contact-email:hover { color: var(--accent); border-color: var(--accent); }
   </style>
 </head>
 <body>
@@ -79,21 +62,6 @@
         <a class="contact-email" href="mailto:info@xdart.ch">
           info@xdart.ch
         </a>
-
-        <div class="social-links">
-          <div>
-            <span class="social-label">Instagram</span>
-            <a class="contact-social" href="https://www.instagram.com/xdart.ch?utm_source=qr" target="_blank" rel="noopener">
-              @xdart.ch
-            </a>
-          </div>
-          <div>
-            <span class="social-label">LinkedIn</span>
-            <a class="contact-social" href="https://www.linkedin.com/company/xdart/?viewAsMember=true" target="_blank" rel="noopener">
-              xdart
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   </main>
@@ -106,6 +74,14 @@
 
   <footer class="site-footer">
     <p>&copy; <span id="year"></span> xdart gallery</p>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/xdart.ch?utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/company/xdart/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 11v5"/><path d="M8 8v.01"/><path d="M12 16v-5"/><path d="M12 11a4 4 0 0 1 8 0v5"/></svg>
+      </a>
+    </div>
   </footer>
 
   <script src="js/main.js"></script>

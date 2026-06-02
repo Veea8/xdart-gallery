@@ -115,11 +115,26 @@ main { flex: 1; }
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 28px 40px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
   font-size: 0.75rem;
   color: var(--text2);
   letter-spacing: 0.04em;
 }
+.footer-social {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.footer-social a {
+  color: var(--text2);
+  display: flex;
+  transition: color 0.2s;
+}
+.footer-social a:hover { color: var(--text); }
+.footer-social svg { width: 18px; height: 18px; }
 
 /* ── Back to top ── */
 .scroll-top {
