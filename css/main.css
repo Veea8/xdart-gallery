@@ -46,15 +46,14 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   justify-content: space-between;
 }
 .site-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
-  font-size: 1.35rem;
-  letter-spacing: 0.04em;
-  color: var(--text);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
-.site-name em {
-  font-style: italic;
-  color: var(--accent);
+.site-name img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 .site-nav {
   display: flex;
