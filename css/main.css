@@ -125,16 +125,24 @@ main { flex: 1; }
 }
 .footer-social {
   display: flex;
-  gap: 14px;
   align-items: center;
+  gap: 18px;
+}
+.footer-follow {
+  font-size: 0.75rem;
+  color: var(--text2);
+  letter-spacing: 0.04em;
 }
 .footer-social a {
-  color: var(--text2);
   display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--text2);
   transition: color 0.2s;
 }
 .footer-social a:hover { color: var(--text); }
-.footer-social svg { width: 18px; height: 18px; }
 
 /* ── Back to top ── */
 .scroll-top {
