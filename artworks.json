@@ -1,6 +1,21 @@
 {
   "artworks": [
     {
+      "id": "between-layers-5",
+      "year": 2025,
+      "medium": "Mixed Media on Canvas",
+      "dimensions": {
+        "height": 100,
+        "width": 80,
+        "depth": null,
+        "unit": "cm"
+      },
+      "collection": "Between Layers",
+      "image": "images/artworks/between-layers-5.jpg",
+      "roomImage": "images/rooms/between-layers-5.jpg",
+      "gruppe": 1
+    },
+    {
       "id": "between-layers-1",
       "year": 2025,
       "medium": "Mixed Media on Canvas",
@@ -61,19 +76,19 @@
       "gruppe": 1
     },
     {
-      "id": "between-layers-5",
+      "id": "between-layers-9",
       "year": 2025,
-      "medium": "Mixed Media on Canvas",
+      "medium": "Mixed Media on Canvas, Bodhi Blatt",
       "dimensions": {
-        "height": 100,
-        "width": 80,
+        "height": 20,
+        "width": 20,
         "depth": null,
         "unit": "cm"
       },
       "collection": "Between Layers",
-      "image": "images/artworks/between-layers-5.jpg",
-      "roomImage": "images/rooms/between-layers-5.jpg",
-      "gruppe": 1
+      "image": "images/artworks/between-layers-9.jpg",
+      "roomImage": "images/rooms/between-layers-9.jpg",
+      "gruppe": 2
     },
     {
       "id": "between-layers-6",
@@ -118,21 +133,6 @@
       "collection": "Between Layers",
       "image": "images/artworks/between-layers-8.jpg",
       "roomImage": "images/rooms/between-layers-8.jpg",
-      "gruppe": 2
-    },
-    {
-      "id": "between-layers-9",
-      "year": 2025,
-      "medium": "Mixed Media on Canvas, Bodhi Blatt",
-      "dimensions": {
-        "height": 20,
-        "width": 20,
-        "depth": null,
-        "unit": "cm"
-      },
-      "collection": "Between Layers",
-      "image": "images/artworks/between-layers-9.jpg",
-      "roomImage": "images/rooms/between-layers-9.jpg",
       "gruppe": 2
     },
     {
