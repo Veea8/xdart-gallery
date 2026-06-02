@@ -196,18 +196,18 @@
       "gruppe": 2
     },
     {
-      "id": "between-layers-32",
-      "year": 2025,
+      "id": "between-layers-36",
+      "year": 2026,
       "medium": "Mixed Media on Canvas, Bodhi Blatt",
       "dimensions": {
-        "height": 90,
-        "width": 30,
+        "height": 60,
+        "width": 80,
         "depth": null,
         "unit": "cm"
       },
       "collection": "Between Layers",
-      "image": "images/artworks/between-layers-32.jpg",
-      "roomImage": "images/rooms/between-layers-32.jpg",
+      "image": "images/artworks/between-layers-36.jpg",
+      "roomImage": "images/rooms/between-layers-36.jpg",
       "gruppe": 3
     },
     {
@@ -256,18 +256,18 @@
       "gruppe": 3
     },
     {
-      "id": "between-layers-36",
-      "year": 2026,
+      "id": "between-layers-32",
+      "year": 2025,
       "medium": "Mixed Media on Canvas, Bodhi Blatt",
       "dimensions": {
-        "height": 60,
-        "width": 80,
+        "height": 90,
+        "width": 30,
         "depth": null,
         "unit": "cm"
       },
       "collection": "Between Layers",
-      "image": "images/artworks/between-layers-36.jpg",
-      "roomImage": "images/rooms/between-layers-36.jpg",
+      "image": "images/artworks/between-layers-32.jpg",
+      "roomImage": "images/rooms/between-layers-32.jpg",
       "gruppe": 3
     },
     {
@@ -471,21 +471,6 @@
       "gruppe": 5
     },
     {
-      "id": "between-layers-24",
-      "year": 2026,
-      "medium": "Mixed Media on Canvas, Bodhi Blatt, Reis",
-      "dimensions": {
-        "height": 80,
-        "width": 60,
-        "depth": null,
-        "unit": "cm"
-      },
-      "collection": "Between Layers",
-      "image": "images/artworks/between-layers-24.jpg",
-      "roomImage": "images/rooms/between-layers-24.jpg",
-      "gruppe": 6
-    },
-    {
       "id": "between-layers-25",
       "year": 2026,
       "medium": "Mixed Media on Canvas, Bodhi Blatt, Reis",
@@ -513,6 +498,21 @@
       "collection": "Between Layers",
       "image": "images/artworks/between-layers-26.jpg",
       "roomImage": "images/rooms/between-layers-26.jpg",
+      "gruppe": 6
+    },
+    {
+      "id": "between-layers-24",
+      "year": 2026,
+      "medium": "Mixed Media on Canvas, Bodhi Blatt, Reis",
+      "dimensions": {
+        "height": 80,
+        "width": 60,
+        "depth": null,
+        "unit": "cm"
+      },
+      "collection": "Between Layers",
+      "image": "images/artworks/between-layers-24.jpg",
+      "roomImage": "images/rooms/between-layers-24.jpg",
       "gruppe": 6
     },
     {
