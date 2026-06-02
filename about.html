@@ -18,21 +18,19 @@
       line-height: 1;
       margin-bottom: 40px;
     }
-    .about-photo {
-      width: 100%;
-      max-width: 340px;
-      height: auto;
-      margin-bottom: 40px;
-      border: 1px solid var(--border);
-    }
     .about-content p {
       font-size: 1rem;
       line-height: 1.85;
       color: var(--text2);
       margin-bottom: 24px;
     }
-    .about-content p:last-child {
-      margin-bottom: 0;
+    .about-content p:last-child { margin-bottom: 0; }
+    .lang-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+    .about-content .exhibition-note {
       margin-top: 32px;
       padding-top: 24px;
       border-top: 1px solid var(--border);
@@ -61,9 +59,45 @@
       <div class="about-content">
         <h1>Between Layers</h1>
 
-        <!-- Optional artist photo: uncomment and update the src -->
-        <!-- <img class="about-photo" src="images/artist.jpg" alt="Xuan Dung Burckhardt" /> -->
+        <!-- German -->
+        <p>
+          Ein Bodhi Blatt aus Vietnam, mit seiner herzähnlichen Form, steht im Zentrum von Xuan
+          Dung Burckhardts neuester Werkserie – Between Layers. Das Skelett des Blattes wird in
+          einem längeren Prozess freigelegt. Dadurch werden Teile des Blattgewebes und das
+          Chlorophyll herausgelöst, so dass das Blatt transparent und lichtdurchlässig wird. Zurück
+          bleibt ein filigranes, fragiles Geflecht, das gerade in seiner Reduktion an Präsenz gewinnt und
+          innere Stärke offenbart.
+        </p>
+        <p>
+          Das Prinzip des Freilegens setzt sich in Burckhardts Bildsprache fort: Ausgehend vom Action
+          Painting entwickelt sie Werke, in denen Bewegung und Stille präsent sind. Diese entstehen im
+          Zusammenspiel von spontaner Geste und bewusster Setzung von Farbe, Material und Form.
+          Farbe fliesst und entfaltet sich im Zusammenspiel mit Raum und Licht. Transparenz macht
+          die Ebenen durchlässig. Sichtbares und Verborgenes überlagern sich in einem offenen
+          Spannungsverhältnis.
+        </p>
+        <p>
+          Burckhardt verbindet Materialien und führt sie in neue Zusammenhänge. Schnur, Knöpfe und
+          das Bodhi Blatt treten in Beziehung. Die Schnur stützt, während das Blatt in seiner Fragilität
+          seine Beständigkeit bewahrt. Japanische Zeitungspapiere symbolisieren das Weltgeschehen
+          und dienen als Bildträger, so dass sich die Schriftzeichen lösen und als Geflecht aus Linien
+          und Formen erscheinen. Betont wird das Zusammenspiel von Gegensätzen: Das Laute der
+          Welt und die stille Präsenz des Blattes; das Fragile und das Tragende; die Vielfalt und die
+          Einheit.
+        </p>
+        <p>
+          Mit Between Layers führt Burckhardt ihre künstlerische Auseinandersetzung fort, die sie
+          bereits mit Flowing Worlds 2021 und Flowing Junction 2023 begonnen hat. Burckhardt stellt
+          seit 2018 regelmässig aus.
+        </p>
+        <p class="exhibition-note">
+          Die Werke sind vom 5. bis 27. Juni 2026 in der Sarasin Art Galerie in Basel zu sehen
+          (<a href="http://www.sarasinart.ch" target="_blank" rel="noopener">www.sarasinart.ch</a>).
+        </p>
 
+        <hr class="lang-divider" />
+
+        <!-- English -->
         <p>
           A Bodhi leaf from Vietnam, with its heart-like form, lies at the center of Xuan Dung
           Burckhardt's latest series of works – Between Layers. The skeleton of the leaf is revealed
@@ -91,10 +125,11 @@
           Worlds in 2021 and Flowing Junction in 2023. Burckhardt has been exhibiting regularly since
           2018.
         </p>
-        <p>
+        <p class="exhibition-note">
           The works are on view from 5 to 27 June 2026 at Sarasin Art Galerie in Basel
           (<a href="http://www.sarasinart.ch" target="_blank" rel="noopener">www.sarasinart.ch</a>).
         </p>
+
       </div>
     </div>
   </main>
