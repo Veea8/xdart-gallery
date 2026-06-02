@@ -29,14 +29,17 @@
 .main-image-wrap {
   border: 1px solid var(--border);
   overflow: hidden;
+  background: var(--border);
 }
 .main-image-wrap img {
   width: 100%;
   height: auto;
   display: block;
-  transition: opacity 0.2s ease;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
-.main-image-wrap img.fading { opacity: 0; }
+.main-image-wrap img.loaded  { opacity: 1; }
+.main-image-wrap img.fading  { opacity: 0; }
 
 .thumb-strip {
   display: flex;

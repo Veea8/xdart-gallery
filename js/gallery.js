@@ -147,6 +147,8 @@
     img.src = artwork.image.replace('images/artworks/', 'images/thumbs/');
     img.alt = artwork.collection + ', ' + artwork.year;
     img.loading = 'lazy';
+    img.addEventListener('load', function () { this.classList.add('loaded'); });
+    if (img.complete) img.classList.add('loaded');
 
     const overlay = document.createElement('div');
     overlay.className = 'masonry-overlay';

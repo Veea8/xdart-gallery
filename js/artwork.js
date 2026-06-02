@@ -26,6 +26,7 @@
 
     // Main image
     const mainImg = document.getElementById('main-img');
+    mainImg.addEventListener('load', function () { this.classList.add('loaded'); });
     mainImg.src = a.image;
     mainImg.alt = a.collection + ', ' + a.year;
 

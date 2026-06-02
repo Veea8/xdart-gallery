@@ -93,15 +93,18 @@
   overflow: hidden;
   cursor: pointer;
   border: 1px solid var(--border);
+  background: var(--border);
 }
 .masonry-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.45s ease;
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.45s ease;
 }
-.masonry-item:hover img { transform: scale(1.04); }
+.masonry-item img.loaded { opacity: 1; }
+.masonry-item:hover img.loaded { transform: scale(1.04); }
 
 .masonry-overlay {
   position: absolute;
