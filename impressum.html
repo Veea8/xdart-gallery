@@ -3,12 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Artwork — xdart gallery</title>
+  <title>Impressum — xdart gallery</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/artwork.css" />
+  <style>
+    .legal-content { max-width: 600px; }
+    .legal-content h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 40px;
+    }
+    .legal-content h2 {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text2);
+      margin: 32px 0 8px;
+    }
+    .legal-content h2:first-of-type { margin-top: 0; }
+    .legal-content p, .legal-content a {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--text2);
+    }
+    .legal-content a {
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .legal-content a:hover { color: var(--accent); border-color: var(--accent); }
+    .lang-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+  </style>
 </head>
 <body>
 
@@ -28,48 +64,39 @@
 
   <main>
     <div class="page-content">
+      <div class="legal-content">
+        <h1>Impressum</h1>
 
-      <a href="index.html" class="back-link" id="back-link">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-          <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        Back to gallery
-      </a>
+        <h2>Verantwortlich für diese Website</h2>
+        <p>Xuan Dung Burckhardt<br>Privatperson</p>
 
-      <div class="error-msg" id="error-msg" style="display:none">
-        Artwork not found.
+        <h2>Kontakt</h2>
+        <p><a href="mailto:info@xdart.ch">info@xdart.ch</a></p>
+
+        <h2>Website</h2>
+        <p><a href="https://gallery.xdart.ch">gallery.xdart.ch</a></p>
+
+        <h2>Haftungsausschluss</h2>
+        <p>Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.</p>
+
+        <h2>Urheberrecht</h2>
+        <p>Die auf dieser Website veröffentlichten Inhalte und Werke unterliegen dem Urheberrecht. Jede Vervielfältigung, Bearbeitung oder Verbreitung bedarf der schriftlichen Zustimmung von Xuan Dung Burckhardt.</p>
+
+        <hr class="lang-divider" />
+
+        <h2>Responsible for this website</h2>
+        <p>Xuan Dung Burckhardt<br>Private individual</p>
+
+        <h2>Contact</h2>
+        <p><a href="mailto:info@xdart.ch">info@xdart.ch</a></p>
+
+        <h2>Disclaimer</h2>
+        <p>The contents of this website have been compiled with the utmost care. However, no guarantee can be given for the accuracy, completeness or topicality of the content.</p>
+
+        <h2>Copyright</h2>
+        <p>The content and works published on this website are subject to copyright law. Any reproduction, editing or distribution requires the written consent of Xuan Dung Burckhardt.</p>
+
       </div>
-
-      <div id="detail-content" style="display:none">
-        <div class="artwork-detail">
-
-          <div class="image-panel">
-            <div class="main-image-wrap">
-              <img id="main-img" src="" alt="" />
-            </div>
-            <div class="thumb-strip" id="thumb-strip">
-              <img class="thumb" id="thumb-artwork" src="" alt="" title="Artwork photo" />
-              <img class="thumb" id="thumb-room" src="" alt="" title="Room view" />
-            </div>
-          </div>
-
-          <div class="details-panel">
-            <h1 class="artwork-collection" id="artwork-collection"></h1>
-            <p class="artwork-year" id="artwork-year"></p>
-            <hr class="detail-divider" />
-            <div class="detail-row">
-              <span class="detail-label">Medium</span>
-              <span class="detail-value" id="detail-medium"></span>
-            </div>
-            <div class="detail-row">
-              <span class="detail-label">Dimensions</span>
-              <span class="detail-value" id="detail-dimensions"></span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
     </div>
   </main>
 
@@ -100,6 +127,5 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/artwork.js"></script>
 </body>
 </html>

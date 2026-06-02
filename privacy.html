@@ -3,40 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — xdart gallery</title>
+  <title>Privacy Policy — xdart gallery</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
   <style>
-    .contact-content { max-width: 460px; }
-    .contact-content h1 {
+    .legal-content { max-width: 600px; }
+    .legal-content h1 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 400;
-      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-size: clamp(2rem, 4vw, 3rem);
       letter-spacing: -0.02em;
       line-height: 1;
-      margin-bottom: 24px;
+      margin-bottom: 40px;
     }
-    .contact-content p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--text2);
-      margin-bottom: 36px;
-    }
-    .contact-email {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .legal-content h2 {
       font-family: 'Jost', sans-serif;
-      font-size: 1rem;
+      font-size: 0.7rem;
       font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text2);
+      margin: 32px 0 8px;
+    }
+    .legal-content h2:first-of-type { margin-top: 0; }
+    .legal-content p {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--text2);
+      margin-bottom: 12px;
+    }
+    .legal-content a {
       color: var(--text);
       border-bottom: 1px solid var(--border);
-      padding-bottom: 3px;
       transition: border-color 0.2s, color 0.2s;
     }
-    .contact-email:hover { color: var(--accent); border-color: var(--accent); }
+    .legal-content a:hover { color: var(--accent); border-color: var(--accent); }
   </style>
 </head>
 <body>
@@ -50,22 +53,40 @@
       <nav class="site-nav" id="site-nav">
         <a href="index.html">Gallery</a>
         <a href="about.html">About</a>
-        <a href="contact.html" class="active">Contact</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
     <div class="page-content">
-      <div class="contact-content">
-        <h1>Get in touch</h1>
-        <p>
-          For inquiries about artworks, exhibitions, or commissions, feel free to reach out.
-        </p>
-        <a class="contact-email" href="mailto:info@xdart.ch">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-          info@xdart.ch
-        </a>
+      <div class="legal-content">
+        <h1>Privacy Policy</h1>
+
+        <h2>Responsible party</h2>
+        <p>Xuan Dung Burckhardt<br>
+        <a href="mailto:info@xdart.ch">info@xdart.ch</a></p>
+
+        <h2>Overview</h2>
+        <p>This website does not use cookies, analytics tools, or tracking of any kind. No personal data is actively collected by the website itself.</p>
+
+        <h2>Server logs</h2>
+        <p>When you visit this website, your browser automatically transmits technical information to the web server. This includes your IP address, browser type, operating system, referring URL, and the date and time of your visit. This data is stored temporarily in server log files for security and technical operation purposes, and is deleted after a short period. It is not linked to any personal identity.</p>
+
+        <h2>Google Fonts</h2>
+        <p>This website loads fonts from Google Fonts (fonts.googleapis.com), a service provided by Google LLC. When a page loads, your browser connects to Google's servers to download the font files. Google may thereby receive your IP address. This is done on the basis of our legitimate interest in a consistent visual presentation of this website. For more information on how Google handles data, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+        <h2>Contact by email</h2>
+        <p>If you contact us by email, the information you provide (name, email address, message content) will be stored solely for the purpose of responding to your inquiry. This data is not shared with third parties and is deleted once it is no longer needed.</p>
+
+        <h2>Your rights</h2>
+        <p>Under the Swiss Federal Act on Data Protection (nDSG) and, where applicable, the EU General Data Protection Regulation (GDPR), you have the right to access, correct, or delete any personal data held about you, as well as the right to restrict or object to its processing. To exercise these rights, please contact <a href="mailto:info@xdart.ch">info@xdart.ch</a>.</p>
+
+        <h2>Changes to this policy</h2>
+        <p>This privacy policy may be updated from time to time. The current version is always available at this address.</p>
+
+        <p style="margin-top:32px; font-size:0.8rem;">Last updated: June 2026</p>
+
       </div>
     </div>
   </main>

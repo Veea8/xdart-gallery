@@ -149,6 +149,13 @@ main { flex: 1; }
 }
 .footer-social a:hover { color: var(--text); }
 
+/* ── Footer links ── */
+.site-footer a {
+  color: var(--text2);
+  transition: color 0.2s;
+}
+.site-footer a:hover { color: var(--text); }
+
 /* ── Back to top ── */
 .scroll-top {
   position: fixed;
