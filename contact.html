@@ -24,7 +24,8 @@
       color: var(--text2);
       margin-bottom: 36px;
     }
-    .contact-email {
+    .contact-email,
+    .contact-social {
       font-family: 'Jost', sans-serif;
       font-size: 1rem;
       font-weight: 400;
@@ -32,8 +33,24 @@
       border-bottom: 1px solid var(--border);
       padding-bottom: 3px;
       transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
     }
-    .contact-email:hover { color: var(--accent); border-color: var(--accent); }
+    .contact-email:hover,
+    .contact-social:hover { color: var(--accent); border-color: var(--accent); }
+    .social-links {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .social-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text2);
+      display: block;
+      margin-bottom: 6px;
+    }
   </style>
 </head>
 <body>
@@ -62,6 +79,21 @@
         <a class="contact-email" href="mailto:info@xdart.ch">
           info@xdart.ch
         </a>
+
+        <div class="social-links">
+          <div>
+            <span class="social-label">Instagram</span>
+            <a class="contact-social" href="https://www.instagram.com/xdart.ch?utm_source=qr" target="_blank" rel="noopener">
+              @xdart.ch
+            </a>
+          </div>
+          <div>
+            <span class="social-label">LinkedIn</span>
+            <a class="contact-social" href="https://www.linkedin.com/company/xdart/?viewAsMember=true" target="_blank" rel="noopener">
+              xdart
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </main>
