@@ -143,8 +143,16 @@
     item.dataset.collection = artwork.collection;
     item.dataset.year = String(artwork.year);
 
+    const thumbSrc = artwork.image.replace('images/artworks/', 'images/thumbs/');
     const img = document.createElement('img');
-    img.src = artwork.image.replace('images/artworks/', 'images/thumbs/');
+    img.src = thumbSrc;
+    img.srcset = thumbSrc + ' 600w, ' + artwork.image + ' 1800w';
+    img.sizes = [
+      '(max-width: 479px) calc(100vw - 40px)',
+      '(max-width: 767px) calc(50vw - 28px)',
+      '(max-width: 1199px) calc(33.33vw - 45px)',
+      'calc(25vw - 50px)'
+    ].join(', ');
     img.alt = artwork.collection + ', ' + artwork.year;
     img.loading = 'lazy';
     img.addEventListener('load', function () { this.classList.add('loaded'); });
