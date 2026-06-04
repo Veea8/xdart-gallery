@@ -18,10 +18,10 @@
 
     // Back link: preserve gallery filter via referrer hash
     const backLink = document.getElementById('back-link');
-    if (document.referrer && document.referrer.includes('index.html') && document.referrer.includes('#')) {
-      backLink.href = 'index.html#' + document.referrer.split('#')[1];
+    if (document.referrer && document.referrer.startsWith(location.origin) && document.referrer.includes('#')) {
+      backLink.href = '/#' + document.referrer.split('#')[1];
     } else {
-      backLink.href = 'index.html';
+      backLink.href = '/';
     }
 
     // Main image

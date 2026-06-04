@@ -167,7 +167,7 @@
     item.appendChild(img);
     item.appendChild(overlay);
     item.addEventListener('click', () => {
-      location.href = 'artwork.html?id=' + encodeURIComponent(artwork.id);
+      location.href = 'artwork?id=' + encodeURIComponent(artwork.id);
     });
 
     return item;
